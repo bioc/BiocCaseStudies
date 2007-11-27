@@ -1,0 +1,14 @@
+export(
+       parseLibVers,
+       requiredPackages, packages2install,
+       resample,
+       mySessionInfo,
+       fixedWidthCat,
+       allSets,
+       lcol1,
+       lcol2,
+       lcol3, 
+       dcol1, 
+       dcol2,
+       dcol3
+       )
