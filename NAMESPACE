@@ -4,7 +4,6 @@ export(
        resample,
        mySessionInfo,
        fixedWidthCat,
-       allSets,
        lcol1,
        lcol2,
        lcol3, 
