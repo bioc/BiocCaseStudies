@@ -3,7 +3,7 @@ Title: BiocCaseStudies: Support for the Case Studies Monograph
 Version: 1.1.1
 Author: R. Gentleman, W. Huber, F. Hahne, M. Morgan, S. Falcon
 Description: Software and data to support the case studies.
-Maintainer: Biocore Team <biocpkgs@lists.fhcrc.org> 
+Maintainer: Biocore Team c/o BioC user list <bioconductor@stat.math.ethz.ch>
 License: The Artistic License, Version 2.0 
 LazyLoad: true
 biocViews: Infrastructure, Statistics
