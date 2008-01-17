@@ -9,5 +9,7 @@ export(
        lcol3, 
        dcol1, 
        dcol2,
-       dcol3
+       dcol3,
+       numName,
+       sepInt
        )

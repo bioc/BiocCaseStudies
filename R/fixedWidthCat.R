@@ -17,3 +17,22 @@ fixedWidthCat <- function(x, width=getOption("width")){
     }
     cat(output, sep="\n", collapse="")
 }
+
+
+
+## match numbers from 1 to 13 to textual names
+numName <- function(x){
+    if(x>13)
+        return(x)
+    nums <- c("one", "two", "three", "four", "five", "six", "seven", "eight",
+              "nine", "ten", "eleven", "twelve", "thirteen")
+    nums[x]
+}
+
+
+## print integers with comma as 1000 separator
+sepInt <- function(x){
+    if(x<1000)
+        return(x)
+    sprintf("%d,%03d", x %/% 1000, x %% 1000)
+}
