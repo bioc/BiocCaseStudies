@@ -2,7 +2,7 @@
 trailingSpaces <- function(x, width){
     y <- gsub("^ *", "", x)
     tmp <- nchar(x)-nchar(y)
-    if(tmp>width)
+    if(tmp>=width)
         tmp <- min(0, width-nchar(y))
     return(tmp)
 }
@@ -15,7 +15,7 @@ fixedWidthCat <- function(x, width=getOption("width")){
     output <-  gsub("\t", "     ", capture.output(x))
     longLines <- which(nchar(output)>width)
     for(l in longLines){
-        ident <- BiocCaseStudies:::trailingSpaces(output[l], width)
+        ident <- trailingSpaces(output[l], width)
         output[l] <- strbreak(output[l], exdent=ident, collapse="\n")
     }
     cat(output, sep="\n", collapse="")
