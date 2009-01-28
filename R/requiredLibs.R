@@ -11,6 +11,9 @@ parseLibVers <- function(){
 
 ## check for missing and outdated packages
 requiredPackages <- function(load=FALSE){
+
+  pkgmissing <- pkgoutdated <- character(0)
+  
   ## get package information
   cat("checking for package dependencies...\n")
   oldOpt <- options(warn=-1)
@@ -24,26 +27,27 @@ requiredPackages <- function(load=FALSE){
   names(avPck) <- reqPck$package
   ## find missing packages
   missing <- sapply(avPck, is.null)
-  if(any(missing)){
-    file.remove("useRbook.tex")
-    stop("Please install the following package(s) to build the book:\n  ",
-         paste(unlist(reqPck$package[missing]), "\n  "), call.=FALSE)
-  }
+  pkgmissing <- unlist(reqPck$package[missing])
+  if(any(missing))
+    message("Please install the following package(s) to build the book:\n  ",
+         paste(pkgmissing, "\n  "))
+
+  
   ## continue only with packages for which version is specified
   sel <- !missing & !is.na(reqPck$version)
   avPck <- unlist(avPck[sel])
+  
   ## find outdated packages
-  #outdated <- mapply(">", reqPck[sel, "version"], avPck)
   outdated <- mapply(function(x,y) package_version(x) > package_version(y),
                      reqPck[sel, "version"], avPck)
-  if(any(outdated)){
-    file.remove("useRbook.tex")
-    stop("The following package(s) need(s) to be updated\n",
-         "in order to build the book:\n  ",
-         paste(unlist(names(avPck)[outdated]), "(is", avPck[outdated] ,
-               "should be",  reqPck[sel, "version"][outdated],
-               ")\n  "), call.=FALSE)
-   }
+  pkgoutdated <- unlist(names(avPck)[outdated]
+  if(any(outdated))
+    message("The following package(s) need(s) to be updated\n",
+            "in order to build the book:\n  ",
+            paste(pkgoutdated, "(is", avPck[outdated] ,
+                  "should be",  reqPck[sel, "version"][outdated],
+                  ")\n  "))
+
   options(oldOpt)
   cat("Great!!! All packages are up to date\n")
 
@@ -58,7 +62,7 @@ requiredPackages <- function(load=FALSE){
                paste(names(loadRes[err]), collapse=", ", sep=""))
       else(message("All packages loaded successfully"))
   }
-  return(invisible(NULL))
+  return(c(pkgmissing, pkgoutdated))
 }
 
 packages2install = function(){
