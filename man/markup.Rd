@@ -28,10 +28,10 @@
   
   \item{\code{solution}:}{environment for solutions to the exercises.}
   
-  \item{\\\code{myincfig}:}{makro for figure environments with three parameters:
+  \item{\\\code{myincfig}:}{macro for figure environments with three parameters:
   (1) figure filename (2) figure width (3) figure caption}
 
-  \item{\\\code{solfig}:}{makro for figure environments within solution
+  \item{\\\code{solfig}:}{macro for figure environments within solution
   chunks. This is necessary because LaTex doesn't allow for floats
   within minipage environments.}
 
