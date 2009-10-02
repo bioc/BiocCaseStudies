@@ -1,6 +1,6 @@
 Package: BiocCaseStudies
 Title: BiocCaseStudies: Support for the Case Studies Monograph
-Version: 1.7.0
+Version: 1.7.1
 Author: R. Gentleman, W. Huber, F. Hahne, M. Morgan, S. Falcon
 Description: Software and data to support the case studies.
 Maintainer: Biocore Team c/o BioC user list <bioconductor@stat.math.ethz.ch>
@@ -40,7 +40,7 @@ Suggests:  affy (>= 1.17.3),
            graph (>= 1.17.4),
            GSEABase (>= 1.1.13),
            hgu133a.db (>= 2.0.2),
- 	   hgu95av2.db,
+           hgu95av2.db,
            hgu95av2cdf (>= 2.0.0),
            hgu95av2probe (>= 2.0.0),
            hopach (>= 1.13.0),
@@ -59,7 +59,6 @@ Suggests:  affy (>= 1.17.3),
            RColorBrewer (>= 1.0-2),
            Rgraphviz (>= 1.17.11),
            Rintact (>= 1.1.4),
-           sma (>= 0.5.15), 
            vsn (>= 3.4.0),
            weaver (>= 1.5.0),
            xtable (>= 1.5-2),
