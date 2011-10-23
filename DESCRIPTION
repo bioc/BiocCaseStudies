@@ -1,9 +1,9 @@
 Package: BiocCaseStudies
 Title: BiocCaseStudies: Support for the Case Studies Monograph
-Version: 1.15.0
+Version: 1.15.1
 Author: R. Gentleman, W. Huber, F. Hahne, M. Morgan, S. Falcon
 Description: Software and data to support the case studies.
-Maintainer: Biocore Team c/o BioC user list <bioconductor@stat.math.ethz.ch>
+Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
 License: Artistic-2.0 
 LazyLoad: true
 biocViews: Infrastructure, Bioinformatics
