@@ -22,13 +22,15 @@ packages2install()
   \code{requiredPackages} returns \code{invisible(NULL)}.
   The function is called for its side effects.
   \code{packages2install} returns a character vector that can be passed
-  to the \code{biocLite} function from the \code{biocLite.R} script.
+  to the \code{install} function from the \code{BiocManager} package.
 }
 
 \author{Florian Hahne}
 \examples{
   \dontrun{
-    biocLite(packages2install())
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+    BiocManager::install(packages2install())
   }
 }
 
